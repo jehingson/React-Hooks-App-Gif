@@ -1,8 +1,6 @@
-import { useState } from "react"
 const apiKey ='3bFHlFy2ctScUWnf5WEZBFAwJefL1d0P' 
 
-
-export default async function getGits ({keyword = 'morty'} = {}){ 
+export default async function getGifs ({keyword = 'morty'} = {}){ 
 
     const apiURL = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${keyword}&limit=9&offset=0&rating=g&lang=es`
 

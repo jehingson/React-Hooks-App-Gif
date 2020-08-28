@@ -1,8 +1,17 @@
-import React, {userEffect, useStete} from 'react'
+import React from 'react'
 import Spinner from '../../components/Spinner'
 import ListGif from '../../components/ListGif'
+import { useGifs } from '../../hooks/useGifs'
 
+export default function SearchResults({ params }) {
+  const { keyword } = params
+  const { loading, gifs } = useGifs({ keyword })
 
-export default function SearchResults ({params}){
-    
+  return <>
+    {loading
+      ? <Spinner />
+      : <ListGif gifs={gifs} />
+    }
+
+  </>
 }
